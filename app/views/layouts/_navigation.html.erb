@@ -1,18 +1,29 @@
 <%# navigation styled for Bootstrap 4.0 %>
 <div class="container">
-  <nav class="navbar navbar-dark bg-inverse">
+  <nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md" style="background: #ddd">
     <ul class="nav navbar-nav clearfix">
       <li class="nav-item">
-        <button class="navbar-toggler hidden-sm-up nav-link" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-          &#9776;
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
       </li>
+      <%= link_to "Enclave Data", root_path, class: 'navbar-brand' %>
     </ul>
-    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-      <%= link_to "Rails bootstrap", root_path, class: 'navbar-brand' %>
-      <ul class="nav navbar-nav">
+
+    <div class="navbar-collapse collapse" id="exCollapsingNavbar2" > 
+      <!-- <ul class="nav navbar-nav"> -->
+      <!-- <ul class="navbar-nav mr-auto"> -->
+      <ul class="nav navbar-nav navbar-right ml-auto">
         <%= render 'layouts/navigation_links' %>
+        &nbsp;
       </ul>
+      <form class="nav navbar-nav navbar-right form-inline">
+        <div class="form-group">
+          <input class="form-control form-control-sm" type="text" placeholder="Search">
+          &nbsp;
+          <button class="btn btn-primary btn-sm" type="submit">Search</button>
+        </div>
+      </form>
     </div>
   </nav>
 </div>
