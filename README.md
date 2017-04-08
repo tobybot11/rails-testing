@@ -22,3 +22,18 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+# rails g pathway
+
+rails generate devise:install
+
+rails g devise:views
+
+rails generate scaffold User name:string cell:string age:integer email:string
+
+rails generate devise User
+
+rails generate devise:controllers auth
+
+rails g active_admin:install
