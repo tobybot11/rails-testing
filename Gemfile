@@ -56,3 +56,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # tdf adds
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'devise'
+
+# active admin integration
+gem 'activeadmin', github: 'activeadmin' #refer https://github.com/activeadmin/activeadmin/issues/3926
+# gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+#
