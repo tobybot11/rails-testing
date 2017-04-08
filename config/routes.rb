@@ -1,15 +1,22 @@
 Rails.application.routes.draw do
-  devise_for :users
+  # devise_for :users
   # didn't realize this resource call was no longer needed?
-  #  resources :users
 
-  unauthenticated do
-       root to: redirect('/login.html') 
-  end
+  devise_for :users, class_name: User, controllers: {
+    sessions: 'auth/sessions'
+  }
+  resources :users
 
-  authenticated do
-      root to: redirect('/logout.html')
-  end
+  #unauthenticated do
+  #  root to: 'auth/sessions#new'
+  #end
+
+  #authenticated do
+  #  root to: 'users#index'
+  #end
+  root to: 'users#index'
+#  root to: redirect('/login.html') 
+      # redirect('/logout.html')
 #  root to: "users#index" -> works
 #  root to: new_user_session_path -> fail?
 #  root to: "devise/sessions#new" -> fail?
